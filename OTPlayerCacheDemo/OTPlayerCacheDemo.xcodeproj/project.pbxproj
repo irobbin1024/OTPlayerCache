@@ -1,0 +1,364 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D1725EB3200B8D2F00AAAB75 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D1725EB2200B8D2F00AAAB75 /* AppDelegate.m */; };
+		D1725EB6200B8D2F00AAAB75 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1725EB5200B8D2F00AAAB75 /* ViewController.m */; };
+		D1725EB9200B8D2F00AAAB75 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1725EB7200B8D2F00AAAB75 /* Main.storyboard */; };
+		D1725EBB200B8D2F00AAAB75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1725EBA200B8D2F00AAAB75 /* Assets.xcassets */; };
+		D1725EBE200B8D2F00AAAB75 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1725EBC200B8D2F00AAAB75 /* LaunchScreen.storyboard */; };
+		D1725EC1200B8D3000AAAB75 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D1725EC0200B8D3000AAAB75 /* main.m */; };
+		D1725EED200B8F7E00AAAB75 /* OTVideoCacheService.m in Sources */ = {isa = PBXBuildFile; fileRef = D1725EE7200B8F7E00AAAB75 /* OTVideoCacheService.m */; };
+		D1725EEE200B8F7E00AAAB75 /* OTVideoDownloadModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D1725EE8200B8F7E00AAAB75 /* OTVideoDownloadModel.m */; };
+		D1725EEF200B8F7E00AAAB75 /* OTAssetLoaderDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D1725EE9200B8F7E00AAAB75 /* OTAssetLoaderDelegate.m */; };
+		D1725EF0200B8F7E00AAAB75 /* NSString+OTMD5Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = D1725EEA200B8F7E00AAAB75 /* NSString+OTMD5Addition.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		D1725EAE200B8D2F00AAAB75 /* OTPlayerCacheDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OTPlayerCacheDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D1725EB1200B8D2F00AAAB75 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		D1725EB2200B8D2F00AAAB75 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		D1725EB4200B8D2F00AAAB75 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		D1725EB5200B8D2F00AAAB75 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		D1725EB8200B8D2F00AAAB75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D1725EBA200B8D2F00AAAB75 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D1725EBD200B8D2F00AAAB75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D1725EBF200B8D2F00AAAB75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D1725EC0200B8D3000AAAB75 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D1725EE5200B8F7E00AAAB75 /* OTAssetLoaderDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTAssetLoaderDelegate.h; sourceTree = "<group>"; };
+		D1725EE6200B8F7E00AAAB75 /* NSString+OTMD5Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+OTMD5Addition.h"; sourceTree = "<group>"; };
+		D1725EE7200B8F7E00AAAB75 /* OTVideoCacheService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTVideoCacheService.m; sourceTree = "<group>"; };
+		D1725EE8200B8F7E00AAAB75 /* OTVideoDownloadModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTVideoDownloadModel.m; sourceTree = "<group>"; };
+		D1725EE9200B8F7E00AAAB75 /* OTAssetLoaderDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTAssetLoaderDelegate.m; sourceTree = "<group>"; };
+		D1725EEA200B8F7E00AAAB75 /* NSString+OTMD5Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+OTMD5Addition.m"; sourceTree = "<group>"; };
+		D1725EEB200B8F7E00AAAB75 /* OTVideoCacheService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTVideoCacheService.h; sourceTree = "<group>"; };
+		D1725EEC200B8F7E00AAAB75 /* OTVideoDownloadModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTVideoDownloadModel.h; sourceTree = "<group>"; };
+		D1725EF1200B90B900AAAB75 /* OTPlayerCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OTPlayerCache.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D1725EAB200B8D2F00AAAB75 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D1725EA5200B8D2F00AAAB75 = {
+			isa = PBXGroup;
+			children = (
+				D1725EB0200B8D2F00AAAB75 /* OTPlayerCacheDemo */,
+				D1725EAF200B8D2F00AAAB75 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D1725EAF200B8D2F00AAAB75 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D1725EAE200B8D2F00AAAB75 /* OTPlayerCacheDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D1725EB0200B8D2F00AAAB75 /* OTPlayerCacheDemo */ = {
+			isa = PBXGroup;
+			children = (
+				D1725EE4200B8F7E00AAAB75 /* OTPlayerCache */,
+				D1725EB1200B8D2F00AAAB75 /* AppDelegate.h */,
+				D1725EB2200B8D2F00AAAB75 /* AppDelegate.m */,
+				D1725EB4200B8D2F00AAAB75 /* ViewController.h */,
+				D1725EB5200B8D2F00AAAB75 /* ViewController.m */,
+				D1725EB7200B8D2F00AAAB75 /* Main.storyboard */,
+				D1725EBA200B8D2F00AAAB75 /* Assets.xcassets */,
+				D1725EBC200B8D2F00AAAB75 /* LaunchScreen.storyboard */,
+				D1725EBF200B8D2F00AAAB75 /* Info.plist */,
+				D1725EC0200B8D3000AAAB75 /* main.m */,
+			);
+			path = OTPlayerCacheDemo;
+			sourceTree = "<group>";
+		};
+		D1725EE4200B8F7E00AAAB75 /* OTPlayerCache */ = {
+			isa = PBXGroup;
+			children = (
+				D1725EF1200B90B900AAAB75 /* OTPlayerCache.h */,
+				D1725EE5200B8F7E00AAAB75 /* OTAssetLoaderDelegate.h */,
+				D1725EE9200B8F7E00AAAB75 /* OTAssetLoaderDelegate.m */,
+				D1725EEB200B8F7E00AAAB75 /* OTVideoCacheService.h */,
+				D1725EE7200B8F7E00AAAB75 /* OTVideoCacheService.m */,
+				D1725EE6200B8F7E00AAAB75 /* NSString+OTMD5Addition.h */,
+				D1725EEA200B8F7E00AAAB75 /* NSString+OTMD5Addition.m */,
+				D1725EEC200B8F7E00AAAB75 /* OTVideoDownloadModel.h */,
+				D1725EE8200B8F7E00AAAB75 /* OTVideoDownloadModel.m */,
+			);
+			name = OTPlayerCache;
+			path = ../../OTPlayerCache;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D1725EAD200B8D2F00AAAB75 /* OTPlayerCacheDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D1725EC4200B8D3000AAAB75 /* Build configuration list for PBXNativeTarget "OTPlayerCacheDemo" */;
+			buildPhases = (
+				D1725EAA200B8D2F00AAAB75 /* Sources */,
+				D1725EAB200B8D2F00AAAB75 /* Frameworks */,
+				D1725EAC200B8D2F00AAAB75 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OTPlayerCacheDemo;
+			productName = OTPlayerCacheDemo;
+			productReference = D1725EAE200B8D2F00AAAB75 /* OTPlayerCacheDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D1725EA6200B8D2F00AAAB75 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = irobbin;
+				TargetAttributes = {
+					D1725EAD200B8D2F00AAAB75 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = D1725EA9200B8D2F00AAAB75 /* Build configuration list for PBXProject "OTPlayerCacheDemo" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D1725EA5200B8D2F00AAAB75;
+			productRefGroup = D1725EAF200B8D2F00AAAB75 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D1725EAD200B8D2F00AAAB75 /* OTPlayerCacheDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D1725EAC200B8D2F00AAAB75 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D1725EBE200B8D2F00AAAB75 /* LaunchScreen.storyboard in Resources */,
+				D1725EBB200B8D2F00AAAB75 /* Assets.xcassets in Resources */,
+				D1725EB9200B8D2F00AAAB75 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D1725EAA200B8D2F00AAAB75 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D1725EEE200B8F7E00AAAB75 /* OTVideoDownloadModel.m in Sources */,
+				D1725EB6200B8D2F00AAAB75 /* ViewController.m in Sources */,
+				D1725EC1200B8D3000AAAB75 /* main.m in Sources */,
+				D1725EF0200B8F7E00AAAB75 /* NSString+OTMD5Addition.m in Sources */,
+				D1725EB3200B8D2F00AAAB75 /* AppDelegate.m in Sources */,
+				D1725EED200B8F7E00AAAB75 /* OTVideoCacheService.m in Sources */,
+				D1725EEF200B8F7E00AAAB75 /* OTAssetLoaderDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		D1725EB7200B8D2F00AAAB75 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D1725EB8200B8D2F00AAAB75 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D1725EBC200B8D2F00AAAB75 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D1725EBD200B8D2F00AAAB75 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D1725EC2200B8D3000AAAB75 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		D1725EC3200B8D3000AAAB75 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D1725EC5200B8D3000AAAB75 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZE2KM4Q755;
+				INFOPLIST_FILE = OTPlayerCacheDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.irobbin.OTPlayerCacheDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D1725EC6200B8D3000AAAB75 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZE2KM4Q755;
+				INFOPLIST_FILE = OTPlayerCacheDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.irobbin.OTPlayerCacheDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D1725EA9200B8D2F00AAAB75 /* Build configuration list for PBXProject "OTPlayerCacheDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D1725EC2200B8D3000AAAB75 /* Debug */,
+				D1725EC3200B8D3000AAAB75 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D1725EC4200B8D3000AAAB75 /* Build configuration list for PBXNativeTarget "OTPlayerCacheDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D1725EC5200B8D3000AAAB75 /* Debug */,
+				D1725EC6200B8D3000AAAB75 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D1725EA6200B8D2F00AAAB75 /* Project object */;
+}
