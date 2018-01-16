@@ -1,5 +1,7 @@
 # OTPlayerCache
 
+!!! 注意，目前不支持iOS11
+
 > AVPlayer的缓存组件，你可以用它来缓存AVPlayer播放过的视频，下次就无需重新下载了
 
 
