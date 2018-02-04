@@ -12,7 +12,7 @@
 #import "OTVideoCacheService.h"
 #import "OTPlayerCache.h"
 
-NSString * const OTCustomSchemePrefix = @"__OT_Stream__";
+NSString * const OTCustomSchemePrefix = @"OTStream";
 
 @implementation OTVideoDownloadModel
 
@@ -62,7 +62,9 @@ NSString * const OTCustomSchemePrefix = @"__OT_Stream__";
 
 + (NSURL *)getSchemeVideoURL:(NSURL *)url {
     NSURLComponents *components = [[NSURLComponents alloc] initWithURL:url resolvingAgainstBaseURL:NO];
-    components.scheme = [components.scheme stringByAppendingString:OTCustomSchemePrefix];
+    NSString * prefix = OTCustomSchemePrefix;
+    NSString * newScheme = [components.scheme stringByAppendingString:prefix];
+    components.scheme = newScheme;
     return [components URL];
 }
 
