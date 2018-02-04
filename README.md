@@ -1,7 +1,5 @@
 # OTPlayerCache
 
-!!! 注意，目前不支持iOS11
-
 > AVPlayer的缓存组件，你可以用它来缓存AVPlayer播放过的视频，下次就无需重新下载了
 
 
@@ -19,24 +17,15 @@
 ## 使用方法
 
 ```objective-c
-// 获取磁盘空间大小
-unsigned long long diskSize = [OTVideoCacheService getDiskFreeSize];
-NSURL *playUrl;
-OTAssetLoaderDelegate *resourceLoader = [OTAssetLoaderDelegate new];
-self.resourceLoader = resourceLoader;
-
-// 如果当前磁盘空间大于某个常量且开启缓存才会走缓存策略
-if (diskSize > kFreeDiskCanDoCache && self.needCache) {
-    playUrl = [OTVideoDownloadModel getSchemeVideoURL:self.videoURL];
+if ([OTVideoCacheService savedVideoExistsWithURL:self.videoURL]) {
+    NSURL * playPathURL = [NSURL fileURLWithPath:[OTVideoCacheService savedVideoPathWithURL:self.videoURL]];
+    self.videoURLAsset = [AVURLAsset URLAssetWithURL:playPathURL options:nil];
 } else {
-    playUrl = self.videoURL;
-}
-
-self.videoURLAsset = [AVURLAsset URLAssetWithURL:playUrl options:nil];
-
-if (diskSize > kFreeDiskCanDoCache && self.needCache) {
-  	// 设置好代理
+    // some code ...
+    OTAssetLoaderDelegate *resourceLoader = [OTAssetLoaderDelegate new];
+    NSURL *playUrl = [OTVideoDownloadModel getSchemeVideoURL:self.videoURL];
     [self.videoURLAsset.resourceLoader setDelegate:resourceLoader queue:dispatch_get_main_queue()];
+    // some code ...
 }
 ```
 
