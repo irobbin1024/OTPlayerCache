@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import <AVFoundation/AVFoundation.h>
 
+FOUNDATION_EXPORT NSString * const OTCustomSchemePrefix;
+
 typedef NS_ENUM(NSInteger, OTVideoDownloadState) {
     OTVideoDownloadStateNormal,
     OTVideoDownloadStateDone,
