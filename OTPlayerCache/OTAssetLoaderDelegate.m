@@ -28,8 +28,7 @@
 
 @implementation OTAssetLoaderDelegate
 
-- (instancetype)init
-{
+- (instancetype)init {
     if (self = [super init]) {
         self.requestList = [NSMutableArray arrayWithCapacity:10];
     }
@@ -38,13 +37,13 @@
 
 #pragma mark - AVAssetResourceLoaderDelegate
 
-- (BOOL)resourceLoader:(AVAssetResourceLoader *)resourceLoader shouldWaitForLoadingOfRequestedResource:(AVAssetResourceLoadingRequest *)loadingRequest
-{
+- (BOOL)resourceLoader:(AVAssetResourceLoader *)resourceLoader shouldWaitForLoadingOfRequestedResource:(AVAssetResourceLoadingRequest *)loadingRequest {
     NSMutableURLRequest * request = loadingRequest.request.mutableCopy;
     NSURLComponents * comps = [[NSURLComponents alloc] initWithURL:request.URL resolvingAgainstBaseURL:NO];
-    comps.scheme = @"http";
+    comps.scheme = [comps.scheme stringByReplacingOccurrencesOfString:OTCustomSchemePrefix withString:@""];
     request.URL = comps.URL;
     request.cachePolicy = NSURLRequestReloadIgnoringLocalCacheData;
+    [self setupRequestRangeField:request dataRequest:loadingRequest.dataRequest];
     
     OTLog(@"request: %@", request.allHTTPHeaderFields[@"Range"]);
     
@@ -63,29 +62,23 @@
     return YES;
 }
 
-- (void)resourceLoader:(AVAssetResourceLoader *)resourceLoader didCancelLoadingRequest:(AVAssetResourceLoadingRequest *)loadingRequest
-{
+- (void)resourceLoader:(AVAssetResourceLoader *)resourceLoader didCancelLoadingRequest:(AVAssetResourceLoadingRequest *)loadingRequest {
     [self removeRequest:loadingRequest];
 }
 
 #pragma mark - Connection Delegate
 
-- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
-{
+- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
     NSString *contentType = [response MIMEType];
     unsigned long long contentLength = [response expectedContentLength];
     
     // 自己解析文件总大小
     NSString *rangeValue = [(NSHTTPURLResponse *)response allHeaderFields][@"Content-Range"];
-    if (rangeValue)
-    {
+    if (rangeValue) {
         NSArray *rangeItems = [rangeValue componentsSeparatedByString:@"/"];
-        if (rangeItems.count > 1)
-        {
+        if (rangeItems.count > 1) {
             contentLength = [rangeItems[1] longLongValue];
-        }
-        else
-        {
+        } else {
             contentLength = [response expectedContentLength];
         }
     }
@@ -98,8 +91,7 @@
     self.fileLength = contentLength;
 }
 
-- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
-{
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
     AVAssetResourceLoadingRequest * request = [self loadingRequestForConnection:connection];
     [request.dataRequest respondWithData:data];
     
@@ -110,8 +102,7 @@
     [model.fileHandler writeData:data];
 }
 
-- (void)connectionDidFinishLoading:(NSURLConnection *)connection
-{
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection {
     OTLog(@"request finished: %@", connection.originalRequest.allHTTPHeaderFields[@"Range"]);
     AVAssetResourceLoadingRequest * request = [self loadingRequestForConnection:connection];
     [request finishLoading];
@@ -121,8 +112,7 @@
     [model.fileHandler closeFile];
 }
 
-- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
-{
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
     OTLog(@"request failed: %@, error: %@", connection.originalRequest.allHTTPHeaderFields[@"Range"], error);
     
     AVAssetResourceLoadingRequest * request = [self loadingRequestForConnection:connection];
@@ -130,8 +120,7 @@
     [self removeRequest:request];
 }
 
-- (NSURLRequest *)connection:(NSURLConnection *)connection willSendRequest:(NSURLRequest *)request redirectResponse:(NSURLResponse *)response
-{
+- (NSURLRequest *)connection:(NSURLConnection *)connection willSendRequest:(NSURLRequest *)request redirectResponse:(NSURLResponse *)response {
     AVAssetResourceLoadingRequest * loadingRequest = [self loadingRequestForConnection:connection];
     loadingRequest.redirect = request;
     return request;
@@ -139,14 +128,26 @@
 
 #pragma mark - Funs
 
-- (NSURLConnection *)connectionForLoadingRequest:(AVAssetResourceLoadingRequest *)request
-{
+- (void) setupRequestRangeField:(NSMutableURLRequest *)request dataRequest:(AVAssetResourceLoadingDataRequest *)dataRequest {
+    // iOS 11 中 request 不包含Range，所以需要自己手动填充进去
+    if ([request valueForHTTPHeaderField:@"Range"] != nil) {
+        return ;
+    }
+    long long offset = dataRequest.requestedOffset;
+    NSInteger length = dataRequest.requestedLength;
+    NSRange range = NSMakeRange((NSUInteger)offset, length);
+    long long fromOffset = range.location;
+    long long endOffset = range.location + range.length - 1;
+    NSString *rangeStr = [NSString stringWithFormat:@"bytes=%lld-%lld", fromOffset, endOffset];
+    [request setValue:rangeStr forHTTPHeaderField:@"Range"];
+}
+
+- (NSURLConnection *)connectionForLoadingRequest:(AVAssetResourceLoadingRequest *)request {
     OTVideoDownloadModel * target = [self downloadModelWithAVRequest:request];
     return target.connection;
 }
 
-- (AVAssetResourceLoadingRequest *)loadingRequestForConnection:(NSURLConnection *)connection
-{
+- (AVAssetResourceLoadingRequest *)loadingRequestForConnection:(NSURLConnection *)connection {
     OTVideoDownloadModel * target = [self downloadModelWithConnection:connection];
     return target.AVPlayerRequest;
 }
@@ -181,14 +182,12 @@
     return target;
 }
 
-- (void)removeConnection:(NSURLConnection *)connection
-{
+- (void)removeConnection:(NSURLConnection *)connection {
     AVAssetResourceLoadingRequest * request = [self loadingRequestForConnection:connection];
     [self removeRequest:request];
 }
 
-- (void)removeRequest:(AVAssetResourceLoadingRequest *)request
-{
+- (void)removeRequest:(AVAssetResourceLoadingRequest *)request {
     if (!request) {
         return;
     }
@@ -273,9 +272,11 @@
     
     [self.fileHandler closeFile];
     
-    //    [OTVideoCacheService removeVideoTempCacheWithURL:self.url complete:nil];
+    // 清除所有的临时文件
+    [OTVideoCacheService removeVideoTempCacheWithURL:self.url complete:nil];
     
     if (writedLength <= 0 || writedLength != self.fileLength) {
+        // 合成内容非法，清除视频文件
         [OTVideoCacheService removeVideoCacheWithURL:self.url complete:nil];
     } else {
         [[OTVideoCacheService sharedService] reportAddedNewCacheFile:[OTVideoCacheService savedVideoPathWithURL:self.url]];
