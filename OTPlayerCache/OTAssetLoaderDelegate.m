@@ -38,6 +38,7 @@
 #pragma mark - AVAssetResourceLoaderDelegate
 
 - (BOOL)resourceLoader:(AVAssetResourceLoader *)resourceLoader shouldWaitForLoadingOfRequestedResource:(AVAssetResourceLoadingRequest *)loadingRequest {
+    
     NSMutableURLRequest * request = loadingRequest.request.mutableCopy;
     NSURLComponents * comps = [[NSURLComponents alloc] initWithURL:request.URL resolvingAgainstBaseURL:NO];
     comps.scheme = [comps.scheme stringByReplacingOccurrencesOfString:OTCustomSchemePrefix withString:@""];
@@ -197,6 +198,7 @@
     
     OTVideoDownloadModel * model = [self downloadModelWithAVRequest:request];
     model.state = OTVideoDownloadStateRemove;
+    [model.fileHandler closeFile];
     [model renameFileNameForRealLength];
 }
 

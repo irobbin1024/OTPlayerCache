@@ -27,6 +27,11 @@ NSString * const OTCustomSchemePrefix = @"OTStream";
     return _filePath;
 }
 
+- (void)dealloc {
+    [_fileHandler closeFile];
+    [_connection cancel];
+}
+
 - (NSFileHandle *)fileHandler {
     if (_fileHandler == nil) {
         self.fileHandler = [NSFileHandle fileHandleForWritingAtPath:self.filePath];
