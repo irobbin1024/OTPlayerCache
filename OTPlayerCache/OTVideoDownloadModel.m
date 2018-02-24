@@ -9,7 +9,6 @@
 #import "OTVideoDownloadModel.h"
 #include <sys/param.h>
 #include <sys/mount.h>
-#import "OTVideoCacheService.h"
 #import "OTPlayerCache.h"
 
 NSString * const OTCustomSchemePrefix = @"OTStream";

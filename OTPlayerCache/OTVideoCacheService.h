@@ -35,7 +35,7 @@ typedef void(^OTCacheCleanCompletedBlock)(NSError * error);
 /**
  是否可以缓存文件（用户空间剩余 1G， 且没超过最大限制）
  
- @return
+ @return BOOL
  */
 - (BOOL)canCacheNewFile;
 
@@ -47,7 +47,7 @@ typedef void(^OTCacheCleanCompletedBlock)(NSError * error);
 /**
  缓存了新文件，请报告
  
- @param cacheFilePath
+ @param cacheFilePath path
  */
 - (void)reportAddedNewCacheFile:(NSString *)cacheFilePath;
 
