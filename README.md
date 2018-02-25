@@ -1,4 +1,9 @@
 # OTPlayerCache
+<p align="left">
+<a href="https://travis-ci.org/irobbin1024/OTPlayerCache"><img src="https://travis-ci.org/irobbin1024/OTPlayerCache.svg?branch=master"></a>
+<a href="https://img.shields.io/cocoapods/v/OTPlayerCache.svg"><img src="https://img.shields.io/cocoapods/v/OTPlayerCache.svg"></a>
+<a href="https://img.shields.io/cocoapods/l/OTPlayerCache.svg"><img src="https://img.shields.io/cocoapods/l/OTPlayerCache.svg?style=flat"></a>
+</p>
 
 > AVPlayer的缓存组件，你可以用它来缓存AVPlayer播放过的视频，下次就无需重新下载了
 
